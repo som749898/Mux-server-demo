@@ -1,0 +1,16 @@
+<txnmgr name="SimpleTransactionManager" logger="Q2" class="org.jpos.transaction.TransactionManager">
+	<property name="space" value="myspace" />
+	<property name="queue" value="myqueue" />
+	<property name="sessions" value="1" />
+	<property name="debug" value="true" />
+	<participant class="com.doubleDB.project.switchparticipant.SwitchPartcipants" logger="Q2" realm="Switch">
+		<property name="0200" value="AuthorizationResponse" />
+		<property name="0800" value="EchoParticipant" />
+	</participant>
+	<group name="AuthorizationResponse">
+		<participant class="com.doubleDB.project.participant.AuthorizationResponse" logger="Q2" />
+	</group>
+	<group name="EchoParticipant">
+		<participant class="com.doubleDB.project.participant.EchoParticipant" logger="Q2" />
+	</group>
+</txnmgr>
