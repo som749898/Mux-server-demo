@@ -1,6 +1,6 @@
 	<channel-adaptor name='clientsimulator-adaptor' class="org.jpos.q2.iso.ChannelAdaptor" logger="Q2">
-		 <channel class="org.jpos.iso.channel.XMLChannel" logger="Q2"
-		       packager="org.jpos.iso.packager.XMLPackager">
+		 <channel class="org.jpos.iso.channel.PostChannel" logger="Q2"
+		       packager="com.doubleDB.project.server.EuroPackager">
 		  <property name="host" value="127.0.0.1" />
 		  <property name="port" value="7001" />
 		 </channel>
