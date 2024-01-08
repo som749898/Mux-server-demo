@@ -3,9 +3,9 @@
 	<property name="queue" value="myqueue" />
 	<property name="sessions" value="1" />
 	<property name="debug" value="true" />
-	<participant class="com.doubleDB.project.switchparticipant.SwitchPartcipants" logger="Q2" realm="Switch">
-		<property name="0200" value="AuthorizationResponse" />
-		<property name="0800" value="EchoParticipant" />
+	<participant class="org.jpos.transaction.participant.Switch" logger="Q2" realm="Switch">
+		<property name="200.00" value="AuthorizationResponse" />
+		<property name="800.00" value="EchoParticipant" />
 	</participant>
 	<group name="AuthorizationResponse">
 		<participant class="com.doubleDB.project.participant.AuthorizationResponse" logger="Q2" />

@@ -1,10 +1,10 @@
-	<channel-adaptor name='clientsimulator-adaptor' class="org.jpos.q2.iso.ChannelAdaptor" logger="Q2">
-		 <channel class="org.jpos.iso.channel.PostChannel" logger="Q2"
-		       packager="com.doubleDB.project.server.EuroPackager">
-		  <property name="host" value="127.0.0.1" />
-		  <property name="port" value="7001" />
-		 </channel>
-		 <in>my-send</in>
-		 <out>my-receive</out>
-		 <reconnect-delay>10000</reconnect-delay>
-	</channel-adaptor>
+<channel-adaptor name='clientsimulator-adaptor' class="org.jpos.q2.iso.ChannelAdaptor" logger="Q2">
+	<channel class="org.jpos.iso.channel.PostChannel" logger="Q2"
+		packager="com.doubleDB.project.server.EuroPackager">
+		<property name="host" value="127.0.0.1" />
+		<property name="port" value="2000" />
+	</channel>
+	<in>my-send</in>
+	<out>my-receive</out>
+	<reconnect-delay>10000</reconnect-delay>
+</channel-adaptor>

@@ -1,12 +1,12 @@
 <server class="org.jpos.q2.iso.QServer" logger="Q2" name="xml-server-8000" realm="xml-server-8000">
-	<attr name="port" type="java.lang.Integer">7001</attr> 
-		<channel class="org.jpos.iso.channel.PostChannel"
-		packager="com.doubleDB.project.server.EuroPackager"  type="server" logger="Q2"
+	<attr name="port" type="java.lang.Integer">7001</attr>
+	<channel class="org.jpos.iso.channel.PostChannel"
+		packager="com.doubleDB.project.server.EuroPackager" type="server" logger="Q2"
 		realm="xml-server-8001">
 	</channel>
-	<request-listener class="com.doubleDB.project.requestlistener.RequestListener" logger="Q2"
+	<request-listener class="org.jpos.iso.IncomingListener" logger="Q2"
 		realm="incoming-request-listener">
-		<property name="queue" value="myqueue" /> ④
+		<property name="queue" value="myqueue" />
 		<property name="space" value="myspace" />
 	</request-listener>
 </server>

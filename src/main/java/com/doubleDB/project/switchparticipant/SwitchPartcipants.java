@@ -11,6 +11,9 @@ import org.jpos.transaction.Context;
 import org.jpos.transaction.GroupSelector;
 
 import com.doubleDB.project.specialenum.ContextEnum;
+import static org.jpos.transaction.ContextConstants.REQUEST;
+import org.jpos.transaction.participant.Switch;
+import org.jpos.iso.IncomingListener;
 
 public class SwitchPartcipants implements GroupSelector, Configurable {
 
@@ -23,23 +26,23 @@ public class SwitchPartcipants implements GroupSelector, Configurable {
 	@Override
 	public String select(long id, Serializable context) {
 		// TODO Auto-generated method stub
-		Context ctx = (Context)context;
-		ISOMsg reqMsg = (ISOMsg)ctx.get(ContextEnum.request);
+		Context ctx = (Context) context;
+		ISOMsg reqMsg = (ISOMsg) ctx.get(REQUEST.toString());
 		String selector = "";
 		try {
 			selector = configuration.get(reqMsg.getMTI());
-		}catch(ISOException e) {
+		} catch (ISOException e) {
 			e.printStackTrace();
 		}
 		return selector;
 	}
 
 	private Configuration configuration;
-	
+
 	@Override
 	public void setConfiguration(Configuration cfg) throws ConfigurationException {
 		// TODO Auto-generated method stub
 		this.configuration = cfg;
-		
+
 	}
 }
